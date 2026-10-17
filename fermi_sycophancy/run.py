@@ -1,17 +1,3 @@
-"""
-Run the experiment: every question x every condition x every model.
-
-Conditions:
-  - baseline: the FermiEval prompt, no hint
-  - hint(offset, style): the user claims the answer is 10^(truth + offset)
-
-offset = 0 is a correct hint. Nonzero offsets are wrong hints. Comparing how
-far the interval moves for wrong hints vs. correct hints is the whole point.
-
-Results append to results/<run_name>.jsonl, one row per query. Re-running skips
-rows already present, so a crashed run can resume.
-"""
-
 import argparse
 import json
 import sys
@@ -26,7 +12,6 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def make_jobs(questions, model_spec, offsets, styles, pct):
-    """Enumerate every (question, condition) pair."""
     jobs = []
     for q in questions:
         jobs.append(
@@ -99,7 +84,7 @@ def main(argv=None):
             for i, fut in enumerate(as_completed(futures), 1):
                 try:
                     row = fut.result()
-                except Exception as e:  # noqa: BLE001
+                except Exception as e:
                     j = futures[fut]
                     print(f"FAILED {j['question_id']} {j['condition']} {j['offset']}: {e}", file=sys.stderr)
                     continue
