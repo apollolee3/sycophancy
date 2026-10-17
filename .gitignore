@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.env
+results/*.jsonl
+data/raw_fermi.json

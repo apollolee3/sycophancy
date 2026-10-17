@@ -1,0 +1,362 @@
+[
+ {
+  "question": "What is the size of the Maldives in square centimeters?",
+  "answer": 12,
+  "source": "GullSO Invitational 23-24",
+  "id": "q0000"
+ },
+ {
+  "question": "Abby has turned to depressive slow cinema as a means of coping with the loss. Filipino filmmaker Lav Diaz is well regarded for his extremely long films. Considering his feature filmography, how many minutes will his collective work last Abby?",
+  "answer": 4,
+  "source": "Sahil Gandhi, WSO Regionals 22-23",
+  "id": "q0001"
+ },
+ {
+  "question": "Suppose that all the DNA from each cell in a human was stretched out and placed in a single row. How many gallons of gas would it take a 2023 Toyota Prius to drive the distance equal to all of that stretched out DNA?",
+  "answer": 8,
+  "source": "SOUP Invitational 23-24",
+  "id": "q0002"
+ },
+ {
+  "question": "How many floating point operations per second (flops) can the fastest supercomputer execute at its peak?",
+  "answer": 18,
+  "source": "Case Western Reserve University 23-24",
+  "id": "q0003"
+ },
+ {
+  "question": "A 27 base pair DNA strand could theoretically code for how many different polypeptides?",
+  "answer": 9,
+  "source": "BullSO Invitational 22-23",
+  "id": "q0004"
+ },
+ {
+  "question": "If the entire population of the US was in line to order a sandwich at Subway at the same time, how long would the lines be?",
+  "answer": 4,
+  "source": "RobertYL, daily fermi questions day #59 [2019 Yale Q2]",
+  "id": "q0005"
+ },
+ {
+  "question": "How attracted are you to your partner (gravitationally, in newtons, assuming you are both 50kg, and are sitting 1m apart)?",
+  "answer": -7,
+  "source": "SSSs Fermi (rafaelnadal) 17-18",
+  "id": "q0006"
+ },
+ {
+  "question": "The infinite monkey theorem states that a monkey hitting keys at random on a typewriter keyboard for an infinite amount of time will almost surely type any given text. If the monkey consistently types at 100 WPM on a 44 key-typewriter, how long, in minutes, would we expect the monkey to take to type the following string: \"GOOD SOUP\"",
+  "answer": 13,
+  "source": "SOUP Invitational 22-23",
+  "id": "q0007"
+ },
+ {
+  "question": "What would the weight in pounds be of a fifty-foottall woman?",
+  "answer": 5,
+  "source": "Captains Tryouts Carmel 17-18",
+  "id": "q0008"
+ },
+ {
+  "question": "The amount of time, in days, it would take to build the Burj Khalifa if, instead of the original crew, I had a workforce equal to the number of dentists in the U.S. that worked at the same pace?",
+  "answer": 2,
+  "source": "Rickards Invitational 23-24",
+  "id": "q0009"
+ },
+ {
+  "question": "What number of US dollar coins would you have to lay on the surface area of the Earth in order to fully cover it?",
+  "answer": 17,
+  "source": "Captains Tryouts Carmel 17-18",
+  "id": "q0010"
+ },
+ {
+  "question": "How many characters are in this bizarre sentence?",
+  "answer": 1,
+  "source": "BirdSO Mini Invitational 21-22",
+  "id": "q0011"
+ },
+ {
+  "question": "How many electrons flow through a 1 A lamp in 1 second?",
+  "answer": 19,
+  "source": "BirdSO In-Person Invitational 23-24",
+  "id": "q0012"
+ },
+ {
+  "question": "How fast does human hair grow? [miles / lifetime]",
+  "answer": -2,
+  "source": "Camas Invitational 22-23",
+  "id": "q0013"
+ },
+ {
+  "question": "On Valentine\u2019s Day, how much money is spent on chocolate and candy worldwide in U.S. dollars?",
+  "answer": 9,
+  "source": "University of Michigan Invitational 18-19",
+  "id": "q0014"
+ },
+ {
+  "question": "How many teaspoons of air would fill the oval office?",
+  "answer": 8,
+  "source": "RobertYL, daily fermi questions day #8 [2019 North Pocono Q9]",
+  "id": "q0015"
+ },
+ {
+  "question": "What is the sum of the numbers from 1 to 105 ?",
+  "answer": 10,
+  "source": "BirdSO Satellite Invitational 21-22",
+  "id": "q0016"
+ },
+ {
+  "question": "How many Joules of energy were realised by the atomic blast in Hiroshima?",
+  "answer": 13,
+  "source": "High Desert Mini Invitational 22-23",
+  "id": "q0017"
+ },
+ {
+  "question": "How many km are there in a light-year?",
+  "answer": 13,
+  "source": "Centerville Invitational 17-18",
+  "id": "q0018"
+ },
+ {
+  "question": "What is the length of Belgium\u2019s border in beard-seconds?",
+  "answer": 14,
+  "source": "Sahil Gandhi, WSO Regionals 22-23",
+  "id": "q0019"
+ },
+ {
+  "question": "Reminiscing about your childhood, now you want to watch a movie. Turns out, a lot of Americans share the same sentiment. How much is the American film industry worth as of 2020 in Indonesian rupiahs?",
+  "answer": 15,
+  "source": "MIT Invitational 21-22",
+  "id": "q0020"
+ },
+ {
+  "question": "Compute the derangement of 13",
+  "answer": 9,
+  "source": "Rickards Invitational 23-24",
+  "id": "q0021"
+ },
+ {
+  "question": "How many molecules of ATP have you used in the time it took to read this problem?",
+  "answer": 21,
+  "source": "Jordan Invitational 23-24",
+  "id": "q0022"
+ },
+ {
+  "question": "How many likes have there been on Facebook? [Use SI Units / 2017 USD]",
+  "answer": 13,
+  "source": "Princeton Invitational 17-18",
+  "id": "q0023"
+ },
+ {
+  "question": "In 2021, how many millionaires were there in Germany?",
+  "answer": 6,
+  "source": "UMass Amherst Invitational 22-23",
+  "id": "q0024"
+ },
+ {
+  "question": "How many pennies would it take to create a walkable bridge from Boston, MA to Portugal, assuming that pennies sink (and that you therefore must stack pennies from the bottom of the ocean floor)?",
+  "answer": 16,
+  "source": "University of Michigan Invitational 17-18",
+  "id": "q0025"
+ },
+ {
+  "question": "How many whiskers from feral cats are there in LA county?",
+  "answer": 8,
+  "source": "RobertYL, daily fermi questions day #101 [2019 Captains Exchange: NCSSM Q28]",
+  "id": "q0026"
+ },
+ {
+  "question": "How many words are on this exam (including the introduction and instructions)? [40 question exam]",
+  "answer": 3,
+  "source": "BullSO Invitational 22-23",
+  "id": "q0027"
+ },
+ {
+  "question": "The number of Earths that would fit inside of the sun?",
+  "answer": 6,
+  "source": "RobertYL, daily fermi questions day #113 [2018 SOUP Q22]",
+  "id": "q0028"
+ },
+ {
+  "question": "What is the population of the world? [Use SI Units / 2017 USD]",
+  "answer": 10,
+  "source": "Princeton Invitational 17-18",
+  "id": "q0029"
+ },
+ {
+  "question": "Whenever I go to my Spanish class, I go up 72 stairs. How many times would I have to go up these stairs in order to climb the equivalent of Mount Everest?",
+  "answer": 4,
+  "source": "Highlands Virtual Invitational 23-24",
+  "id": "q0030"
+ },
+ {
+  "question": "How many total students does the University of Chicago have?",
+  "answer": 4,
+  "source": "RobertYL, daily fermi questions day #104 [2018 Harvard Q27]",
+  "id": "q0031"
+ },
+ {
+  "question": "The volume of air, in cubic meters, in all the bags of Lay\u2019s sold in 2023, assuming they\u2019re all family-sized.",
+  "answer": 7,
+  "source": "UT Austin Invitational 23-24",
+  "id": "q0032"
+ },
+ {
+  "question": "What is the atmospheric pressure (in ATM) at the bottom of the Mariana Trench?",
+  "answer": 4,
+  "source": "High Desert Satellite Invitational 23-24",
+  "id": "q0033"
+ },
+ {
+  "question": "How many children were born in America in December of 2019?",
+  "answer": 5,
+  "source": "North Pocono Invitational 22-23",
+  "id": "q0034"
+ },
+ {
+  "question": "How many steps will a human take in their lifetime?",
+  "answer": 8,
+  "source": "High Desert Mini Invitational 23-24",
+  "id": "q0035"
+ },
+ {
+  "question": "The number of sugarcane-powered cars that could drive the distance from the Earth to the Sun fueled by the sugarcane produced across the world in one year. Assume the car gets as much energy from the sugarcane as a human would from eating it.",
+  "answer": 4,
+  "source": "UT Austin Invitational 23-24",
+  "id": "q0036"
+ },
+ {
+  "question": "How many human genomes can you store in a 1 Terabyte hard drive?",
+  "answer": 3,
+  "source": "SSSs Fermi (rafaelnadal) 17-18",
+  "id": "q0037"
+ },
+ {
+  "question": "How many active student organizations does CMU have?",
+  "answer": 2,
+  "source": "Carnegie Mellon Invitational 22-23",
+  "id": "q0038"
+ },
+ {
+  "question": "What is the ratio of the speed of light to the speed of Usain Bolt?",
+  "answer": 7,
+  "source": "North Pocono Invitational 22-23",
+  "id": "q0039"
+ },
+ {
+  "question": "How many acres of pizza do Americans eat each day?",
+  "answer": 2,
+  "source": "Seven Lakes Invitational 18-19",
+  "id": "q0040"
+ },
+ {
+  "question": "How many base pairs are in the human genome?",
+  "answer": 9,
+  "source": "Golden Gate Invitational 23-24",
+  "id": "q0041"
+ },
+ {
+  "question": "How many nucleons flow down the drain during an average shower?",
+  "answer": 28,
+  "source": "Columbia Invitational 17-18",
+  "id": "q0042"
+ },
+ {
+  "question": "What is the ionization energy of Beryllium (Be), in J/mol?",
+  "answer": 6,
+  "source": "Seven Lakes Invitational 18-19",
+  "id": "q0043"
+ },
+ {
+  "question": "For this question, only count everything inside and not including the curly brackets: {# of characters this intentionally sized question?}",
+  "answer": 2,
+  "source": "SSSS Fermi (randomsci) 22-23",
+  "id": "q0044"
+ },
+ {
+  "question": "How many characters (including spaces) are in this entire test?",
+  "answer": 4,
+  "source": "RobertYL, daily fermi questions day #131 [2018 Kenston Q23]",
+  "id": "q0045"
+ },
+ {
+  "question": "Total transistors produced throughout history.",
+  "answer": 22,
+  "source": "UT Austin Invitational 22-23",
+  "id": "q0046"
+ },
+ {
+  "question": "Assume the Earth\u2019s orbit is a perfect circle. If the period of revolution suddenly became the same as the Sun\u2019s period of revolution around the center of the Milky Way, what is the difference in distance in inches between the arc length covered by one second of earth\u2019s new orbit and the average sea level rise in one month?",
+  "answer": -2,
+  "source": "SSSS Fermi (randomsci) 22-23",
+  "id": "q0047"
+ },
+ {
+  "question": "With some money secured through that first round, you move on to the second round, which features a diagram of a 5x5 square. How many ways are there to place the numbers 1-25 into this square such that every row and column is increasing?",
+  "answer": 9,
+  "source": "MIT Invitational 21-22",
+  "id": "q0048"
+ },
+ {
+  "question": "Counting all agencies and the type of work (seasonal, full time, etc), how many people are employed by the *just* the federal government (not state, local) of the United States of America?",
+  "answer": 6,
+  "source": "Princeton Invitational 22-23",
+  "id": "q0049"
+ },
+ {
+  "question": "What is the number of square inches of ice surface on a typical National Hockey League ice rink?",
+  "answer": 6,
+  "source": "Case Western Reserve University 23-24",
+  "id": "q0050"
+ },
+ {
+  "question": "Chinese bird drop soup is made from a species called the edible-nest swiftlet (Aerodramus fuciphagus). How many of these birds are there in Asia?",
+  "answer": 4,
+  "source": "SOUP Invitational 23-24",
+  "id": "q0051"
+ },
+ {
+  "question": "Assuming an average distance of 1 foot between your center of mass and this test, what is the gravitational force between you in Newtons?",
+  "answer": -9,
+  "source": "MIT Invitational 17-18",
+  "id": "q0052"
+ },
+ {
+  "question": "Many of you either are or know someone who is considering the medical field as a future profession. How many seconds of unpaid-schooling does a traditional physician undergo before finally receiving their first paycheck in their profession?",
+  "answer": 7,
+  "source": "Highlands Virtual Invitational 23-24",
+  "id": "q0053"
+ },
+ {
+  "question": "How many leopard geckos are owned as pets in the United States?",
+  "answer": 6,
+  "source": "BirdSO In-Person Invitational 22-23",
+  "id": "q0054"
+ },
+ {
+  "question": "How many hairs are there on an average human\u2019s head?",
+  "answer": 5,
+  "source": "Rickards Invitational 23-24",
+  "id": "q0055"
+ },
+ {
+  "question": "What is the additional acceleration of Voyager 1 by shining a red laser pointer at it, in meters per second squared?",
+  "answer": -15,
+  "source": "BirdSO Mini Invitational 21-22",
+  "id": "q0056"
+ },
+ {
+  "question": "How many M&Ms would it take to fill the grand canyond?",
+  "answer": 16,
+  "source": "High Desert Satellite Invitational 22-23",
+  "id": "q0057"
+ },
+ {
+  "question": "Rae also attempts to redirect your income into her account using your SSN. Assuming you make the median income, how many cents can Rae expect to be deposited into her account per year before taxes (because obviously a scammer would evade taxes)?",
+  "answer": 7,
+  "source": "MIT Invitational 22-23",
+  "id": "q0058"
+ },
+ {
+  "question": "How long, in days, does it take a monster truck to fall 100 meters?",
+  "answer": -5,
+  "source": "RobertYL, daily fermi questions day #135 [2019 Staten Island Q23]",
+  "id": "q0059"
+ }
+]
