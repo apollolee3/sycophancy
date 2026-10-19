@@ -3,3 +3,4 @@ __pycache__/
 .env
 results/*.jsonl
 data/raw_fermi.json
+.venv/

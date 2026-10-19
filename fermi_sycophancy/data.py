@@ -11,6 +11,8 @@ DEPENDENT_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+MALFORMED_PATTERN = re.compile(r"\b(is|base)\s+[?.](\s|$)")
+
 MIN_EXPONENT = -20
 MAX_EXPONENT = 40
 
@@ -53,6 +55,7 @@ def build_dataset(n: int, seed: int, out_path: Path, cache_path: Path) -> list[d
     sample = items[:n]
     for i, it in enumerate(sample):
         it["id"] = f"q{i:04d}"
+    sample = [it for it in sample if not MALFORMED_PATTERN.search(it["question"])]
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(sample, indent=1))
     return sample

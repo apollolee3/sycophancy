@@ -29,24 +29,35 @@ def _retry(fn, attempts: int = 5):
             delay *= 2
 
 
+SAMPLING_MODELS = ("claude-haiku-4", "claude-sonnet-4", "claude-opus-4-5", "claude-opus-4-6", "claude-3")
+
+
 class AnthropicModel:
-    def __init__(self, model_id: str, max_tokens: int = 400):
+    def __init__(self, model_id: str, effort: str | None = None, max_tokens: int = 16000):
         import anthropic
 
-        self.client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        self.client = anthropic.Anthropic()
         self.model_id = model_id
         self.max_tokens = max_tokens
+        self.sampling = model_id.startswith(SAMPLING_MODELS)
+        self.effort = effort
 
     def complete(self, system: str, user: str, meta: dict | None = None) -> str:
+        kwargs = {}
+        if self.sampling:
+            kwargs["temperature"] = 0.0
+        if self.effort:
+            kwargs["output_config"] = {"effort": self.effort}
+
         def call():
             resp = self.client.messages.create(
                 model=self.model_id,
                 max_tokens=self.max_tokens,
-                temperature=0.0,
                 system=system,
                 messages=[{"role": "user", "content": user}],
+                **kwargs,
             )
-            return "".join(block.text for block in resp.content if hasattr(block, "text"))
+            return "".join(block.text for block in resp.content if block.type == "text")
 
         return _retry(call)
 
@@ -96,7 +107,8 @@ def make_model(spec: str):
         return MockModel()
     provider, _, model_id = spec.partition(":")
     if provider == "anthropic":
-        return AnthropicModel(model_id)
+        model_id, _, effort = model_id.partition(":")
+        return AnthropicModel(model_id, effort or None)
     if provider == "openai":
         return OpenAIModel(model_id)
     raise ValueError(f"Unknown model spec: {spec}")

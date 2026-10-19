@@ -46,7 +46,7 @@ def run_job(model, job):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", nargs="+", default=["mock"],
-                    help="e.g. anthropic:claude-haiku-5-5 openai:gpt-4o-mini mock")
+                    help="e.g. anthropic:claude-haiku-4-5 anthropic:claude-sonnet-5-5:low mock")
     ap.add_argument("--n-questions", type=int, default=150)
     ap.add_argument("--offsets", nargs="+", type=int, default=[-5, -2, 0, 2, 5],
                     help="hint = truth + offset, in base-10 exponent units")

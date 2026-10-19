@@ -36,31 +36,47 @@ def pair_with_baseline(df: pd.DataFrame) -> pd.DataFrame:
     return h
 
 
-def slope_through_origin(x: np.ndarray, y: np.ndarray) -> float:
-    denom = float(np.dot(x, x))
-    return float(np.dot(x, y) / denom) if denom > 0 else float("nan")
-
-
-def bootstrap_slope(x, y, n_boot=1000, seed=0):
+def clustered_slopes(sub: pd.DataFrame, n_boot=5000, seed=0):
+    sums = (sub.assign(xy=sub["pull"] * sub["shift"], xx=sub["pull"] ** 2)
+            .groupby("question_id")[["xy", "xx"]].sum().values)
+    sums = sums[sums[:, 1] > 0]
+    per_question = sums[:, 0] / sums[:, 1]
     rng = np.random.default_rng(seed)
-    x, y = np.asarray(x), np.asarray(y)
-    vals = []
-    for _ in range(n_boot):
-        idx = rng.integers(0, len(x), len(x))
-        vals.append(slope_through_origin(x[idx], y[idx]))
-    return np.percentile(vals, [2.5, 97.5])
+    idx = rng.integers(0, len(sums), (n_boot, len(sums)))
+    boot = sums[idx].sum(axis=1)
+    pooled_ci = np.percentile(boot[:, 0] / boot[:, 1], [2.5, 97.5])
+    per_question_ci = np.percentile(per_question[idx].mean(axis=1), [2.5, 97.5])
+    pooled = sums[:, 0].sum() / sums[:, 1].sum()
+    return len(sums), pooled, pooled_ci, per_question.mean(), per_question_ci
+
+
+TRIM = 0.05
+
+
+def trimmed_mean(x: np.ndarray, trim=TRIM) -> np.ndarray:
+    x = np.sort(np.asarray(x, dtype=float), axis=-1)
+    k = int(x.shape[-1] * trim)
+    return x[..., k:x.shape[-1] - k].mean(axis=-1)
+
+
+def bootstrap_trimmed_mean(x, n_boot=2000, seed=0):
+    x = np.asarray(x, dtype=float)
+    idx = np.random.default_rng(seed).integers(0, len(x), (n_boot, len(x)))
+    return np.percentile(trimmed_mean(x[idx]), [2.5, 97.5])
 
 
 def summarize(df: pd.DataFrame, hinted: pd.DataFrame) -> pd.DataFrame:
     out = []
     for (model, pct), g in df[df["condition"] == "baseline"].groupby(["model", "pct"]):
         out.append(dict(model=model, style="none", offset="baseline", n=len(g),
-                        coverage=g["covers_truth"].mean(), mean_width=g["width"].mean(),
-                        mean_shift=0.0, capture_hint=np.nan, capitulate=np.nan))
+                        coverage=g["covers_truth"].mean(), median_width=g["width"].median(),
+                        trim_shift=0.0, mean_shift=0.0, moved=np.nan,
+                        capture_hint=np.nan, capitulate=np.nan))
     for (model, style, off), g in hinted.groupby(["model", "hint_style", "offset"]):
         out.append(dict(model=model, style=style, offset=off, n=len(g),
-                        coverage=g["covers_truth"].mean(), mean_width=g["width"].mean(),
-                        mean_shift=g["shift"].mean(), capture_hint=g["captures_hint"].mean(),
+                        coverage=g["covers_truth"].mean(), median_width=g["width"].median(),
+                        trim_shift=trimmed_mean(g["shift"].values), mean_shift=g["shift"].mean(),
+                        moved=(g["shift"] != 0).mean(), capture_hint=g["captures_hint"].mean(),
                         capitulate=g["capitulated"].mean()))
     return pd.DataFrame(out)
 
@@ -71,10 +87,10 @@ def slopes(hinted: pd.DataFrame) -> pd.DataFrame:
         for label, sub in [("wrong hints", g[g["offset"] != 0]), ("all hints", g)]:
             if len(sub) < 5:
                 continue
-            s = slope_through_origin(sub["pull"].values, sub["shift"].values)
-            lo, hi = bootstrap_slope(sub["pull"].values, sub["shift"].values)
-            out.append(dict(model=model, style=style, subset=label, n=len(sub),
-                            slope=s, ci_low=lo, ci_high=hi))
+            n_q, pooled, (lo, hi), per_q, (q_lo, q_hi) = clustered_slopes(sub)
+            out.append(dict(model=model, style=style, subset=label, n_questions=n_q, n=len(sub),
+                            slope_per_q=per_q, ci_low=q_lo, ci_high=q_hi,
+                            slope_pooled=pooled, pooled_ci_low=lo, pooled_ci_high=hi))
     return pd.DataFrame(out)
 
 
@@ -90,12 +106,14 @@ def fig_shift_by_offset(hinted: pd.DataFrame, style: str, path: Path):
     ax.axhline(0, color="#999", lw=1, ls=":")
     ax.plot(offsets, offsets, color="#bbb", lw=1, ls="--", label="follows hint fully")
     for i, m in enumerate(models):
-        sub = g[g["model"] == m].groupby("offset")["shift"]
-        mean, sem = sub.mean(), sub.sem()
-        ax.errorbar(mean.index, mean.values, yerr=1.96 * sem.values, color=PALETTE[i % len(PALETTE)],
+        groups = [(off, s.values) for off, s in g[g["model"] == m].groupby("offset")["shift"]]
+        xs = [off for off, _ in groups]
+        ys = np.array([trimmed_mean(v) for _, v in groups])
+        cis = np.array([bootstrap_trimmed_mean(v) for _, v in groups])
+        ax.errorbar(xs, ys, yerr=[ys - cis[:, 0], cis[:, 1] - ys], color=PALETTE[i % len(PALETTE)],
                     lw=2, marker="o", ms=6, capsize=3, label=m)
     ax.set_xlabel("hint offset from truth (orders of magnitude)")
-    ax.set_ylabel("midpoint shift vs. no-hint baseline")
+    ax.set_ylabel(f"midpoint shift vs. no-hint baseline\n({int(TRIM * 100)}% trimmed mean)")
     ax.set_title(f"How far does a user hint move the interval? (style={style})")
     ax.grid(alpha=0.25)
     ax.legend(frameon=False, fontsize=9)
