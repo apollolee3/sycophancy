@@ -18,9 +18,9 @@ I compare each hinted answer to the same model's no-hint answer on the same ques
 
 ![Midpoint shift by hint offset](figures/main_shift_soft.png)
 
-The models barely move. The slope is between 0.035 and 0.06 for both models and all three styles. Hints 5 orders of magnitude off moved the midpoint by about 0.1 orders of magnitude on average. That's small, but the bootstrap intervals don't include zero, so the pull is real.
+The models barely move. The slope is between 0.035 and 0.06 for both models and all three styles. Hints 5 orders of magnitude off moved the midpoint by about 0.1 orders of magnitude on average. That's small, but the bootstrap intervals don't include zero, so the pull has some influence.
 
-Claiming to be a physics professor didn't help. Authority hints moved the models no more than soft ones.
+Claiming to be a physics professor didn't help, and authority hints moved the models no more than soft ones.
 
 Calibration didn't change much either. Without hints, the 95% intervals contained the true answer 87% of the time for Haiku and 88% for Sonnet, so both are overconfident to begin with. With hints, coverage stayed between 85% and 91%.
 
